@@ -1,0 +1,183 @@
+\newcounter{xp}
+\newcounter{ecl}
+\newcounter{age}
+\newcounter{totalhp}
+\newcounter{currenthp}
+\newcounter{str}
+\newcounter{dex}
+\newcounter{con}
+\newcounter{int}
+\newcounter{wis}
+\newcounter{cha}
+\newcounter{strmod}
+\newcounter{dexmod}
+\newcounter{conmod}
+\newcounter{intmod}
+\newcounter{wismod}
+\newcounter{chamod}
+\newcounter{sizemod}
+\newcounter{initmod}
+\newcounter{initmisc} %misc initiative modifier
+\newcounter{ac}
+\newcounter{touchac}
+\newcounter{flatfootedac}
+\newcounter{acarmour}
+\newcounter{acshield}
+\newcounter{acdex}
+\newcounter{acsize}
+\newcounter{acnatural}
+\newcounter{acdeflect}
+\newcounter{acmisc}
+\newcounter{acmaxdex}
+\newcounter{fort}
+\newcounter{reflex}
+\newcounter{will}
+\newcounter{basefort}
+\newcounter{baseref}
+\newcounter{basewill}
+\newcounter{resistancesave}
+\newcounter{magicfort}
+\newcounter{magicref}
+\newcounter{magicwill}
+\newcounter{fortmisc}
+\newcounter{refmisc}
+\newcounter{willmisc}
+\newcounter{cmb}
+\newcounter{cmd}
+\newcounter{cmbmisc}
+\newcounter{cmdmisc}
+\newcounter{bab}
+\newcounter{spellresistance}
+\newcounter{lightload}
+\newcounter{medload}
+\newcounter{heavyload}
+\newcounter{money}
+\newcounter{casterlevel}
+
+\newcommand{\charname}{Heneski (Formerly Nightmare)}
+\newcommand{\charrace}{Gnome}
+\newcommand{\charclass}{Tattooed Sorcerer 14}
+\newcommand{\charalignment}{NG}
+\newcommand{\charsex}{Male}
+\newcommand{\charsize}{Small}
+\setcounter{sizemod}{-1}
+\newcommand{\chartype}{Humanoid (Gnome)}
+\newcommand{\charheight}{3'4``}
+\newcommand{\charweight}{15.42kg/38lb}
+\newcommand{\charhair}{Fiery Orange}
+\newcommand{\chareyes}{Dark brown}
+\setcounter{age}{60}
+
+\setcounter{xp}{38}
+\setcounter{ecl}{11}
+
+\setcounter{totalhp}{100}
+\setcounter{currenthp}{100}
+\newcommand{\speed}{20', 4sq (hopefully)}
+
+\setcounter{str}{10} % 2
+\setcounter{dex}{14} % 2 +2 enhancement
+\setcounter{con}{14} % 2
+\setcounter{int}{14} % 5
+\setcounter{wis}{7}  % -4
+\setcounter{cha}{31} % 13 17 +2 racial +1 4th +1 boon +2 profane +1 8th +6 enhancement
+
+\setcounter{initmisc}{2}
+\setcounter{acnatural}{0}
+\setcounter{acarmour}{0}
+\setcounter{acmaxdex}{999} %maximum dexterity modifier armour allows. Use a high number for none
+
+\setcounter{basefort}{4}
+\setcounter{baseref}{4}
+\setcounter{basewill}{9}
+\setcounter{resistancesave}{4}
+\setcounter{bab}{7}
+\setcounter{spellresistance}{0}
+\setcounter{casterlevel}{14}
+
+
+\setcounter{cmdmisc}{\value{acdeflect}}
+
+\newcommand{\feats}{
+ Varisian Tattoo (Evocation)$^{\textrm{b}}$,
+ Spell Focus (Enchantment), Intensify Spell,
+ Spell Specialisation (Battering Blast),
+ Improved Familiar, Evolved Familiar (Skilled(UMD)),
+ Empower Spell, Quicken Spell$^{\textrm{b}}$, Seeking Spell
+}
+
+\newcommand{\traits}{
+Signature Spell (Battering Blast),
+Gifted Adept (Battering Blast) \\
+Wayang Spellhunter (Battering Blast)$^\textrm{b}$ \\
+}
+\newcommand{\specialabilities}{
+Low-light vision;
+1/day arcane mark comprehend languages, message, read magic;
+1/day reroll natural 1 on 1d20, Tattoo Familiar (Riddywipple);
+3/day Dancing Lights, Woodland Stride;
+Create Spell Tattoo 2/day, 2/day Dimension Door (CL15)\small{[Enhanced Varisian Tattoo]};
+Fleeting Glance (Sp): Turn invisible for a number of rounds per day equal to your sorcerer level. This ability functions as greater invisibility. These rounds need not be consecutive.
+}
+
+
+\newcommand{\conditionalmods}{
++2 Vs Enchantment, +2 vs Language-dependant, +2 vs fear and despair\\
+}
+\newcommand{\languages}{
+Common, Kelish, Gnome, Varision, Abyssal \\
+}
+\setcounter{lightload}{24}
+\setcounter{medload}{50}
+\setcounter{heavyload}{\value{lightload} + \value{medload}}
+
+\setcounter{money}{0}
+
+\newcommand{\conditionalspellmods}{
++2 DC for Compulsion, +1 DC for enchantment, +1 DC for language-dependant
+}
+
+
+\newcounter{cl_1}
+\setcounter{cl_1}{\value{casterlevel} +1}
+\newcounter{cl_7}
+\setcounter{cl_7}{\value{casterlevel} +7}
+
+
+\newcommand{\spellsknown}{
+\begin{compactenum}
+\item [7th] \spell{Limited Wish}
+\item [6th] \spell{Sonic Form}, \spell{Mislead$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Flesh to Stone}, \spell{Contingency}
+\item [5th] \spell{Feeblemind DC28}, \spell{Tree Stride$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Echolocation}, \spell{Dominate Person}
+\item [4th] \spell{Emergency Force Sphere}, \spell{Poison$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Dimensional Anchor}, \spell{Dimension Door}, \spell{Suppress Primal Magic}
+\item [3rd] \spell{Battering Blast (CL\arabic{cl_7})}, \spell{Deep Slumber$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Fireball (CL\arabic{cl_1})}, \spell{Arcane Sight}, \spell{Dispel Magic}
+\item [2nd] \spell{Hideous Laughter (DC26)$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Glitterdust}, \spell{Mirror Image}, \spell{Pilfering Hand (CL\arabic{cl_1})}, \spell{Suppress Charms and Compulsions}, \spell{Lipstitch}
+\item [1st] \spell{Magic Missile CL\arabic{cl_1}}, \spell{Liberating Command}, 
+	\spell{Cure Light Wounds (requires DC21 UMD)},
+	\spell{Mage Armor}, \spell{Entangle$^{\textrm{b}}$ CL\arabic{cl_1}}, \spell{Break}, \spell{Grease}, \spell{Shield}, \spell{Blood Money$^{\textrm{b}}$}
+\item [0]   \spell{Prestidigitation}, \spell{Detect Magic}, \spell{Mage Hand}, \spell{Message}, \spell{Acid Splash}, \spell{Dancing Lights}, \spell{Open/close}, \spell{Arcane Mark}, \spell{Spark}
+\end{compactenum}
+}
+
+\newcommand{\domains}{
+None
+}
+\newcommand{\notes}{
+58/62 Prestige
+
+Battering Blast: 4 Balls at close range (60'). Each inflict 5d6 damage (10d6 when intensified). Bullrush attempt CMB = 30 + 10 for each ball beyond the first. Each ball makes its own attempt, but take highest. If the bullrush succeeds, DC23 reflex save or target is prone.\\
+}
+\newcommand{\people}{
+}
+
+\input{../pathfinder_society.tex}
+
+\newcommand{\scenariolist}{
+
+}
+
+
+\newcommand{\biography}{
+
+}
+

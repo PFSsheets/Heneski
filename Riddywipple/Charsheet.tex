@@ -1,0 +1,235 @@
+\documentclass[article,10pt]{memoir}
+\usepackage{verbatim}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage[left=0.6in,right=0.6in,bottom=0.6in,top=0.6in]{geometry}
+\usepackage{paralist}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{memhfixc}
+\usepackage{calc}
+\usepackage{ulem}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{ifthen}
+\usepackage[usenames,dvipsnames]{color}
+\setlength{\columnsep}{5mm}
+\pagestyle{empty}
+
+\setlength{\parindent}{0in}
+
+%\newcommand{\hr}{\hrulefill}
+%\newcommand{\hr}{\vspace{-\baselineskip}\rule{\linewidth}{0.4pt}}
+%\newcommand{\hr}{\hrulefill}
+\newcommand{\hr}{\vspace{-1.5ex}\rule{\linewidth}{0.4pt}}
+\newcommand{\afterenum}{\everypar{\parindent=0pt\hangindent=1em}}
+
+\newcommand{\super}[1]{\raisebox{1ex}{\scriptsize #1}}
+\newcommand{\spell}[1]{\emph{#1}}
+\newcommand{\flagspell}[2]{\spell{#1}\super{#2}}
+\newcommand{\domspell}[1]{\flagspell{#1}{D}}
+\newcommand{\scspell}[1]{\flagspell{#1}{SC}}
+\newcommand{\superscript}[1]{\ensuremath{^{\textrm{#1}}}}
+\newcommand{\subscript}[1]{\ensuremath{_{\textrm{#1}}}}
+
+% The attacks command creates a formatted 'attack' type.  For different output
+% edit this command.  The syntax is:
+% \attacks{Name}{type (0 for normal, 1 for breath weapon/save)}{Name}{Attack bonus/save}{critical/type}{damage}
+\newcommand{\attacks}[6]{
+\ifthenelse{\equal{#2}{normal}}{
+\\
+ \large \textbf{#1} & \small Attack Bonus & \small Critical & \small Damage\\
+#3 & #4 & #5 & #6
+}{
+ \\
+  \large \textbf{#1} & \small Save & \small Type & \small Damage\\
+#3 & #4 & #5 & #6
+}
+}
+% This command represents a skill line
+% Syntax:
+% \skill{Name}{ability}{ranks}{misc}{class}{trained_only}
+% Where class is 1 for a class skill and 0 for cross-class
+% eg: \skill{Bluff}{cha}{2}{0}{1}{0}
+\newcounter{skillmod}
+\newcounter{abilitymod}
+\newcounter{classmod}
+\newcommand{\skill}[6]{
+ \ifthenelse{\equal{#2}{Str}}{
+ \setcounter{abilitymod}{\value{strmod}}
+}{\ifthenelse{\equal{#2}{Dex}}{
+ \setcounter{abilitymod}{\value{dexmod}}
+}{\ifthenelse{\equal{#2}{Con}}{
+ \setcounter{abilitymod}{\value{conmod}}
+}{\ifthenelse{\equal{#2}{Int}}{
+ \setcounter{abilitymod}{\value{intmod}}
+}{\ifthenelse{\equal{#2}{Wis}}{
+ \setcounter{abilitymod}{\value{wismod}}
+}{\ifthenelse{\equal{#2}{Cha}}{
+ \setcounter{abilitymod}{\value{chamod}}
+}{
+}}}}}}
+\ifthenelse{#3 = 0 \AND #6 = 1}{
+\\
+#1 &-&=&#2&\arabic{abilitymod}&+&#3&+&#4&+&#5
+}{
+\setcounter{classmod}{\minof{#3}{#5}*3}
+\setcounter{skillmod}{#3+\value{abilitymod}+#4+\value{classmod}}
+\\
+#1 &\arabic{skillmod}&=&#2&\arabic{abilitymod}&+&#3&+&#4&+&\arabic{classmod}
+}}
+
+%This command calculates save DCs and stuff
+% Syntax: \spelllevel{level}{known}{perday}{bonus}{DC}
+\newcommand{\spelllevel}[5]{
+#2&#5&#1&#3&#4\\
+}
+
+%This command represents an item carried
+% Syntax: \gear{Name}{Location}{Weight}{Value}
+\newcounter{totalweight}
+\newcounter{totalworth}
+\setcounter{totalworth}{0}
+\newcommand{\gear}[4]{
+%\setcounter{totalweight}{\value{totalweight} + \real{#3}}
+%\setcounter{totalworth}{\value{totalworth} + \real{#4}}
+#1 & #2 & #4 & #3\\
+}
+
+\begin{document}
+
+\include{Abilities}
+\include{pathfinderabilitycalc}
+
+
+{\LARGE \charname \large\hfill ECL \arabic{ecl} }
+
+\begin{multicols}{2}
+\begingroup
+\fontfamily{phv}\selectfont
+\raggedright
+\afterenum
+\charrace \ \charclass \\
+\textbf{XP :} \arabic{xp} \\
+\charalignment \ \charsize \ \chartype, \textbf{Age} \arabic{age}\\
+
+\textbf{Height:} \charheight, \textbf{Weight:} \charweight \\
+\textbf{Hair:} \charhair, \textbf{Eyes:} \chareyes\\
+\vspace{1mm}
+
+\vspace{1mm}
+\large
+\textbf{HP} \superscript{\tiny TOTAL} \arabic{totalhp} \superscript{\tiny CURRENT} \arabic{currenthp} \\
+
+
+\vspace{2mm}
+\begin{tabular}{l l l}
+\textbf{STR} & \arabic{str} & (+\arabic{strmod}) \\%1 (11)
+\textbf{DEX} & \arabic{dex} & (+\arabic{dexmod}) \\%3 (13)
+\textbf{CON} & \arabic{con} & (+\arabic{conmod}) \\%2 (12)
+\textbf{INT} & \arabic{int} & (+\arabic{intmod}) \\%3 (13)
+\textbf{WIS} & \arabic{wis} & (+\arabic{wismod}) \\ %-4(7)
+\textbf{CHA} & \arabic{cha} & (+\arabic{chamod}) \\%13(17)
+\end{tabular}
+\vspace{2mm}
+\textbf{INITIATIVE} $ \arabic{initmod} = \underbrace{\arabic{dexmod}}_{\mbox{\tiny Dex}} + \underbrace{\arabic{initmisc}}_{\mbox{\tiny Misc}} $ \\
+\textbf{AC} $\arabic{ac} = 10 + \underbrace{\arabic{acarmour}}_{\mbox{\tiny Armour}} + \underbrace{\arabic{acshield}}_{\mbox{\tiny Shield}}+ \underbrace{\arabic{acdex}}_{\mbox{\tiny Dex}} + \underbrace{\arabic{acsize}}_{\mbox{\tiny Size}} + \underbrace{\arabic{acnatural}}_{\mbox{\tiny Natural}} + \underbrace{\arabic{acdeflect}}_{\mbox{\tiny Deflect}} + \underbrace{\arabic{acmisc}}_{\mbox{\tiny Misc}}$\\
+\vspace{2mm}
+\textbf{Touch} \arabic{touchac}, \textbf{Flat-Footed} \arabic{flatfootedac}\
+\begin{tabular}{c@{}c@{}c@{}c@{}c@{}c@{}c@{}c@{}c@{}c@{}c@{}c@{}}
+ \tiny Saving Throws & \tiny TOTAL& & \tiny Base && \tiny Ability && \tiny Magic && \tiny Misc && \tiny Temp \\
+\textbf{Fortitude} & \arabic{fort} &\small =& \arabic{basefort} &\small +& \arabic{conmod} &\small + & \arabic{magicfort} &\small +& \arabic{fortmisc} &\small +& 0 \\
+\textbf{Reflex} & \arabic{reflex} &\small =& \arabic{baseref} &\small +& \arabic{dexmod} &\small +& \arabic{magicref} &\small +& \arabic{refmisc} &\small +& 0 \\
+\textbf{Will} & \arabic{will} &\small =& \arabic{basewill} &\small +& \arabic{wismod} &\small +& \arabic{magicwill} &\small +& \arabic{willmisc} &\small +& 0 \\
+\end{tabular}\\
+\vspace{2mm}
+\textbf{BASE ATTACK BONUS} +\arabic{bab}\\
+\textbf{SPELL RESISTANCE} \arabic{spellresistance}\\
+\textbf{CMB} $ \arabic{cmb} = \underbrace{\arabic{bab}}_{\mbox{\tiny BAB}} + \underbrace{\arabic{strmod}}_{\mbox{\tiny STR}} + \underbrace{\arabic{sizemod}}_{\mbox{\tiny SIZE}} + \underbrace{\arabic{cmbmisc}}_{\mbox{\tiny MISC}}$ \\
+\textbf{CMD} $ \arabic{cmd} = \underbrace{\arabic{bab}}_{\mbox{\tiny BAB}} + \underbrace{\arabic{strmod}}_{\mbox{\tiny STR}} + \underbrace{\arabic{dexmod}}_{\mbox{\tiny DEX}} + \underbrace{\arabic{sizemod}}_{\mbox{\tiny SIZE}} + \underbrace{\arabic{cmdmisc}}_{\mbox{\tiny MISC}}+ 10 $\\
+
+\begin{center}
+ \textbf{Attacks}
+\end{center}
+\normalsize
+\begin{tabular}{l@{}c@{}c@{\ }c@{}}
+\input{Attacks}
+\end{tabular}
+
+\begin{center}
+ \large \textbf{FEATS}
+\end{center}
+\normalsize
+\feats
+
+
+\begin{center}
+ \large \textbf{SPECIAL ABILITIES}
+\end{center}
+\specialabilities
+
+
+
+\columnbreak
+\textbf{SPEED} \speed \\
+\small
+\begin{center}
+ \large \textbf{SKILLS}
+\end{center}
+\begin{tabular}{l@{}c@{}c@{}c@{}c@{}c@{}c@{}c@{}c@{}c@{}c@{}c}
+ SKILL NAMES &\tiny BONUS&&&\tiny ABILITY&&\tiny RANKS&&\tiny MISC&&\tiny CLASS\\
+\input{Skills}
+\end{tabular}
+\normalsize
+\textbf{CONDITIONAL MODIFIERS}\\
+\conditionalmods
+\textbf{LANGUAGES}\\
+\languages
+\textbf{Carrying Capacity}\\
+\begin{tabular}{c c c}
+ Light Load & Medium Load & Heavy Load\\
+ <\arabic{lightload} & <\arabic{medload} & <\arabic{heavyload}\\
+\end{tabular}\\
+\vspace{1mm}
+\textbf{Money}\\
+\arabic{money} GP\\
+
+\begin{center}
+ \large \textbf{TRAITS}
+\end{center}
+\normalsize
+\traits
+%%TODO: Insert armour section, for those who wear armour
+\clearpage
+
+\large \textbf{SPELLS}\\
+\begin{tabular}{p{1cm} p{15mm} p{10mm} p{15mm} p{15mm}}
+ \scriptsize SPELLS KNOWN & \scriptsize SPELL SAVE DC & \scriptsize LEVEL & \scriptsize SPELLS PER DAY & \scriptsize BONUS SPELLS\\
+\input{Spelllevel}
+\end{tabular}\\
+
+\textbf{Conditional Modifiers}\\
+\conditionalspellmods
+
+\textbf{Domains / Specialty School}\\
+\domains
+
+\textbf{Spells Known/Slots} (CL \arabic{casterlevel}):\\
+\spellsknown
+\afterenum
+
+\hr
+
+
+\end{multicols}
+
+\fontfamily{phv}\selectfont
+\large \textbf{GEAR}\\
+\begin{tabular}{l c c c}
+ Name & Location & Value & Weight \\
+ \input{Items}
+ %Total & & \arabic{totalworth} & \arabic{totalweight} \\
+\end{tabular}\\
+\endgroup
+
+
+\end{document}

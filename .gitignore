@@ -1,0 +1,7 @@
+# Gitignore file
+*.pdf
+*.log
+*.out
+*~
+*.backup
+*.aux

@@ -1,0 +1,25 @@
+\setcounter{strmod}{\value{str}/2 - 5}
+\setcounter{dexmod}{\value{dex}/2 - 5}
+\setcounter{conmod}{\value{con}/2 - 5}
+\setcounter{intmod}{\value{int}/2 - 5}
+\setcounter{wismod}{\value{wis}/2 - 5}
+\setcounter{chamod}{\value{cha}/2 - 5}
+
+\setcounter{initmod}{\value{dexmod} + \value{initmisc}}
+
+\setcounter{acsize}{ 0 - \value{sizemod}}
+\setcounter{acdex}{\minof{\value{dexmod}}{\value{acmaxdex}}}
+\setcounter{ac}{10 + \value{acarmour} + \value{acshield} + \value{acnatural}+ \value{acsize} + \value{acdeflect} + \value{acdex} + \value{acmisc}}
+\setcounter{touchac}{\value{ac}-\value{acarmour}-\value{acshield}-\value{acnatural}}
+\setcounter{flatfootedac}{\value{ac}-\value{acdex}}
+
+\setcounter{magicfort}{\value{resistancesave}}
+\setcounter{magicref}{\value{resistancesave}}
+\setcounter{magicwill}{\value{resistancesave}}
+\setcounter{fort}{\value{basefort} + \value{conmod} + \value{magicfort} + \value{fortmisc}}
+\setcounter{reflex}{\value{baseref} + \value{dexmod} +\value{magicref} + \value{refmisc}}
+\setcounter{will}{\value{basewill} + \value{wismod} + \value{magicwill} + \value{willmisc}}
+
+\setcounter{cmb}{\value{bab} + \value{strmod} + \value{cmbmisc} + \value{sizemod}}
+\setcounter{cmd}{10 + \value{bab} + \value{strmod} + \value{dexmod} + \value{sizemod} + \value{cmdmisc}}
+

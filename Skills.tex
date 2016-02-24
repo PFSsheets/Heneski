@@ -1,0 +1,77 @@
+% Syntax:
+% \skill{Name}{ability}{ranks}{misc}{class}{trained_only}
+% Where class is 1 for a class skill and 0 for cross-class
+% eg: \skill{Bluff}{Cha}{2}{0}{1}{0}
+\skill{Acrobatics}             {Dex}{0}{0}{0}{0}
+\skill{Appraise}               {Int}{0}{0}{1}{0}
+\skill{Bluff}                  {Cha}{14}{2}{1}{0}
+\skill{Climb}                  {Str}{0}{0}{0}{0}
+\skill{Craft}                  {Int}{0}{0}{1}{0}
+\skill{Diplomacy}              {Cha}{0}{0}{0}{0}
+\skill{Disable Device*}        {Dex}{0}{0}{0}{1}
+\skill{Disguise}               {Cha}{0}{0}{0}{0}
+\skill{Escape Artist}          {Dex}{0}{0}{0}{0}
+\skill{Fly}                    {Dex}{0}{0}{1}{0}
+\skill{Handle Animal*}         {Cha}{0}{0}{0}{1}
+\skill{Heal}                   {Wis}{0}{0}{0}{0}
+\skill{Intimidate}             {Cha}{1}{0}{1}{0}
+\skill{Know(Arcana)}           {Int}{3}{0}{1}{1}
+\skill{Know(Dungeoneering)}    {Int}{0}{0}{0}{1}
+\skill{Know(Engineering)}      {Int}{0}{0}{0}{1}
+\skill{Know(Geography)}        {Int}{0}{0}{0}{1}
+\skill{Know(History)}          {Int}{0}{0}{0}{1}
+\skill{Know(Local)}            {Int}{0}{0}{0}{1}
+\skill{Know(Nature)}           {Int}{1}{0}{1}{1}
+\skill{Know(Nobility)}         {Int}{0}{0}{0}{1}
+\skill{Know(Planes)}           {Int}{1}{0}{1}{1}
+\skill{Know(Religion)}         {Int}{0}{0}{0}{1}
+\skill{Linguistics*}           {Int}{3}{0}{0}{1}
+\skill{Perception}             {Wis}{12}{4}{0}{0}
+\skill{Perform}                {Cha}{0}{0}{0}{1}
+\skill{Profession (Gardener)}  {Wis}{0}{0}{1}{0}
+\skill{Ride}                   {Dex}{0}{0}{0}{0}
+\skill{Sense Motive}           {Wis}{0}{4}{0}{0}
+\skill{Sleight of Hand}        {Dex}{0}{0}{0}{0}
+\skill{Spellcraft}             {Int}{7}{0}{1}{1}
+\skill{Stealth}                {Dex}{0}{0}{0}{0}
+\skill{Survival}               {Wis}{0}{0}{0}{0}
+\skill{Swim}                   {Str}{0}{0}{0}{0}
+\skill{Use Magic Device*}      {Cha}{14}{2}{1}{1}
+
+\begin{comment}
+  Acrobatics &1&=&Dex&\arabic{dexmod}&+&0&+&0&+&0 
+ Appraise &2&=&Int&\arabic{intmod}&+&0&+&0&+&0 
+ Bluff &10&=&Cha&\arabic{chamod}&+&2&+&0&+&3 
+ Climb &3&=&Str&\arabic{strmod}&+&0&+&0&+&0 
+ Craft &2&=&Int&\arabic{intmod}&+&0&+&0&+&0 
+ Diplomacy &5&=&Cha&\arabic{chamod}&+&0&+&0&+&0 
+ Disable Device* &-&=&Dex&\arabic{dexmod}&+&0&+&0&+&0 
+ Disguise &5&=&Cha&\arabic{chamod}&+&0&+&0&+&0 
+ Escape Artist &1&=&Dex&\arabic{dexmod}&+&0&+&0&+&0 
+ Fly &5&=&Dex&\arabic{dexmod}&+&1&+&0&+&3 
+ Handle Animal* &-&=&Cha&\arabic{chamod}&+&0&+&0&+&0 
+ Heal &-1&=&Wis&\arabic{wismod}&+&0&+&0&+&0 
+ Intimidate &9&=&Cha&\arabic{chamod}&+&1&+&0&+&3 
+ Know(Arcana) &7&=&Int&\arabic{intmod}&+&2&+&0&+&3 
+ Know(Dungeoneering) &-&=&Int&\arabic{intmod}&+&0&+&0&+&0 
+ Know(Engineering) &-&=&Int&\arabic{intmod}&+&0&+&0&+&0 
+ Know(Geography) &-&=&Int&\arabic{intmod}&+&0&+&0&+&0 
+ Know(History) &-&=&Int&\arabic{intmod}&+&0&+&0&+&0 
+ Know(Local) &-&=&Int&\arabic{intmod}&+&0&+&0&+&0 
+ Know(Nature) &-&=&Int&\arabic{intmod}&+&0&+&0&+&0 
+ Know(Nobility) &-&=&Int&\arabic{intmod}&+&0&+&0&+&0 
+ Know(Planes) &-&=&Int&\arabic{intmod}&+&0&+&0&+&0 
+ Know(Religion) &-&=&Int&\arabic{intmod}&+&0&+&0&+&0 
+ Linguistics* &7&=&Int&\arabic{intmod}&+&2&+&0&+&3 
+ Perception &4&=&Wis&\arabic{wismod}&+&2&+&0&+&3 
+ Perform &5&=&Cha&\arabic{chamod}&+&0&+&0&+&0 
+ Profession &-1&=&Wis&\arabic{wismod}&+&0&+&0&+&0 
+ Ride &1&=&Dex&\arabic{dexmod}&+&0&+&0&+&0 
+ Sense Motive &-1&=&Wis&\arabic{wismod}&+&0&+&0&+&0 
+ Sleight of Hand &-&=&Dex&\arabic{dexmod}&+&0&+&0&+&0 
+ Spellcraft &7&=&Int&\arabic{intmod}&+&2&+&0&+&3 
+ Stealth &1&=&Dex&\arabic{dexmod}&+&0&+&0&+&0 
+ Survival &-1&=&Wis&\arabic{wismod}&+&0&+&0&+&0 
+ Swim &3&=&Str&\arabic{strmod}&+&0&+&0&+&0 
+ Use Magic Device* &-&=&Cha&\arabic{chamod}&+&0&+&0&+&0 
+\end{comment}

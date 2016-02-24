@@ -1,0 +1,160 @@
+\newcounter{xp}
+\newcounter{ecl}
+\newcounter{age}
+\newcounter{totalhp}
+\newcounter{currenthp}
+\newcounter{str}
+\newcounter{dex}
+\newcounter{con}
+\newcounter{int}
+\newcounter{wis}
+\newcounter{cha}
+\newcounter{strmod}
+\newcounter{dexmod}
+\newcounter{conmod}
+\newcounter{intmod}
+\newcounter{wismod}
+\newcounter{chamod}
+\newcounter{sizemod}
+\newcounter{initmod}
+\newcounter{initmisc} %misc initiative modifier
+\newcounter{ac}
+\newcounter{touchac}
+\newcounter{flatfootedac}
+\newcounter{acarmour}
+\newcounter{acshield}
+\newcounter{acdex}
+\newcounter{acsize}
+\newcounter{acnatural}
+\newcounter{acdeflect}
+\newcounter{acmisc}
+\newcounter{acmaxdex}
+\newcounter{fort}
+\newcounter{reflex}
+\newcounter{will}
+\newcounter{basefort}
+\newcounter{baseref}
+\newcounter{basewill}
+\newcounter{resistancesave}
+\newcounter{magicfort}
+\newcounter{magicref}
+\newcounter{magicwill}
+\newcounter{fortmisc}
+\newcounter{refmisc}
+\newcounter{willmisc}
+\newcounter{cmb}
+\newcounter{cmd}
+\newcounter{cmbmisc}
+\newcounter{cmdmisc}
+\newcounter{bab}
+\newcounter{spellresistance}
+\newcounter{lightload}
+\newcounter{medload}
+\newcounter{heavyload}
+\newcounter{money}
+\newcounter{casterlevel}
+
+\newcommand{\charname}{Riddywipple}
+\newcommand{\charrace}{Faerie Dragon}
+\newcommand{\charclass}{Familiar 11}
+\newcommand{\charalignment}{NG}
+\newcommand{\charsex}{Male}
+\newcommand{\charsize}{Tiny}
+\setcounter{sizemod}{-2}
+\newcommand{\chartype}{Dragon}
+\newcommand{\charheight}{1'4``}
+\newcommand{\charweight}{1.42kg/3.8lb}
+\newcommand{\charhair}{Fiery Orange}
+\newcommand{\chareyes}{Orange}
+\setcounter{age}{59}
+
+\setcounter{xp}{16}
+\setcounter{ecl}{3}
+
+\setcounter{totalhp}{49}
+\setcounter{currenthp}{49}
+\newcommand{\speed}{10 ft., fly 60 ft. (perfect), swim 30 ft.}
+
+\setcounter{str}{9} % 2
+\setcounter{dex}{17} % 2
+\setcounter{con}{13} % 2
+\setcounter{int}{16} % 5
+\setcounter{wis}{14}  % -4
+\setcounter{cha}{16} % 13 +2 racial +1 4th
+
+
+\setcounter{acnatural}{9}
+\setcounter{acarmour}{0}
+\setcounter{acmisc}{1}
+\setcounter{acmaxdex}{999} %maximum dexterity modifier armour allows. Use a high number for none
+
+\setcounter{basefort}{4}
+\setcounter{baseref}{4} %dragon type has +3 at 3HD
+\setcounter{basewill}{8}
+\setcounter{resistancesave}{0}
+\setcounter{bab}{6}
+\setcounter{spellresistance}{19}
+
+\setcounter{cmdmisc}{\value{acdeflect}}
+
+\newcommand{\feats}{
+Spell Sponge, Dodge
+}
+
+\newcommand{\traits}{
+}
+\newcommand{\specialabilities}{
+Low-light vision, darkvision 60 ft.\\
+5-foot cone, euphoria for 1d6 rounds, DC 12 Fort negates. Creatures affected by euphoria are staggered, sickened, and immune to fear effects for the duration. A faerie dragon can use this breath weapon once every 1d4 rounds. \\
+Greater Invisibility (CL6) 3/day
+}
+
+
+\newcommand{\conditionalmods}{
+}
+\newcommand{\languages}{
+Common, Kelish, Gnome, Varision, Abyssal, Draconic, Sylvan, Tien, Elven, telepathy 100 ft.  \\
+}
+\setcounter{lightload}{24}
+\setcounter{medload}{50}
+\setcounter{heavyload}{\value{lightload} + \value{medload}}
+
+\setcounter{money}{0}
+
+\newcommand{\conditionalspellmods}{
+}
+
+\setcounter{casterlevel}{3}
+
+\newcounter{cl_1}
+\setcounter{cl_1}{\value{casterlevel} +1}
+\newcounter{cl_5}
+\setcounter{cl_5}{\value{casterlevel} +5}
+
+
+\newcommand{\spellsknown}{
+\begin{compactenum}
+\item [1st] \spell{Grease}, \spell{Silent Image}, \spell{Sleep}
+\item [0]   \spell{Dancing Lights}, \spell{Flare}, \spell{Ghost Sound}, \spell{Mage Hand}, \spell{Open/Close}
+\end{compactenum}
+}
+
+\newcommand{\domains}{
+None
+}
+\newcommand{\notes}{
+28/30 Prestige
+
+}
+\newcommand{\people}{
+}
+
+\newcommand{\scenariolist}{
+
+}
+
+
+\newcommand{\biography}{
+
+}
+
