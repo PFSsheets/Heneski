@@ -56,7 +56,7 @@
 
 \newcommand{\charname}{Heneski (Formerly Nightmare)}
 \newcommand{\charrace}{Gnome}
-\newcommand{\charclass}{Tattooed Sorcerer 14}
+\newcommand{\charclass}{Tattooed Sorcerer 16}
 \newcommand{\charalignment}{NG}
 \newcommand{\charsex}{Male}
 \newcommand{\charsize}{Small}
@@ -69,10 +69,10 @@
 \setcounter{age}{60}
 
 \setcounter{xp}{38}
-\setcounter{ecl}{11}
+\setcounter{ecl}{16}
 
-\setcounter{totalhp}{100}
-\setcounter{currenthp}{100}
+\setcounter{totalhp}{114}
+\setcounter{currenthp}{114}
 \newcommand{\speed}{20', 4sq (hopefully)}
 
 \setcounter{str}{10} % 2
@@ -80,20 +80,20 @@
 \setcounter{con}{14} % 2
 \setcounter{int}{14} % 5
 \setcounter{wis}{7}  % -4
-\setcounter{cha}{31} % 13 17 +2 racial +1 4th +1 boon +2 profane +1 8th +6 enhancement
+\setcounter{cha}{32} % 13 17 +2 racial +1 4th +1 boon +2 profane +1 8th +6 enhancement +1 12th +1 16th
 
 \setcounter{initmisc}{2}
 \setcounter{acnatural}{0}
 \setcounter{acarmour}{0}
 \setcounter{acmaxdex}{999} %maximum dexterity modifier armour allows. Use a high number for none
 
-\setcounter{basefort}{4}
-\setcounter{baseref}{4}
-\setcounter{basewill}{9}
+\setcounter{basefort}{5}
+\setcounter{baseref}{5}
+\setcounter{basewill}{10}
 \setcounter{resistancesave}{4}
-\setcounter{bab}{7}
+\setcounter{bab}{10}
 \setcounter{spellresistance}{0}
-\setcounter{casterlevel}{14}
+\setcounter{casterlevel}{16}
 
 
 \setcounter{cmdmisc}{\value{acdeflect}}
@@ -103,7 +103,7 @@
  Spell Focus (Enchantment), Intensify Spell,
  Spell Specialisation (Battering Blast),
  Improved Familiar, Evolved Familiar (Skilled(UMD)),
- Empower Spell, Quicken Spell$^{\textrm{b}}$, Seeking Spell
+ Empower Spell, Quicken Spell$^{\textrm{b}}$, Improved Critical (Battering Blast), Spell Perfection (Battering Blast)
 }
 
 \newcommand{\traits}{
@@ -118,6 +118,7 @@ Low-light vision;
 3/day Dancing Lights, Woodland Stride;
 Create Spell Tattoo 2/day, 2/day Dimension Door (CL15)\small{[Enhanced Varisian Tattoo]};
 Fleeting Glance (Sp): Turn invisible for a number of rounds per day equal to your sorcerer level. This ability functions as greater invisibility. These rounds need not be consecutive.
+Fey Magic (Su): Reroll caster level check for SR.
 }
 
 
@@ -140,18 +141,19 @@ Common, Kelish, Gnome, Varision, Abyssal \\
 
 \newcounter{cl_1}
 \setcounter{cl_1}{\value{casterlevel} +1}
-\newcounter{cl_7}
-\setcounter{cl_7}{\value{casterlevel} +7}
+\newcounter{cl_10}
+\setcounter{cl_10}{\value{casterlevel} +10}
 
 
 \newcommand{\spellsknown}{
 \begin{compactenum}
-\item [7th] \spell{Limited Wish}
+\item [8th] \spell{Prismatic Wall}
+\item [7th] \spell{Limited Wish}, \spell{Control Undead}, \spell{Phase Door$^{\textrm{b}}$}
 \item [6th] \spell{Sonic Form}, \spell{Mislead$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Flesh to Stone}, \spell{Contingency}
-\item [5th] \spell{Feeblemind DC28}, \spell{Tree Stride$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Echolocation}, \spell{Dominate Person}
+\item [5th] \spell{Feeblemind DC29}, \spell{Tree Stride$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Echolocation}, \spell{Dominate Person}, \spell{Duplicate Familiar}
 \item [4th] \spell{Emergency Force Sphere}, \spell{Poison$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Dimensional Anchor}, \spell{Dimension Door}, \spell{Suppress Primal Magic}
-\item [3rd] \spell{Battering Blast (CL\arabic{cl_7})}, \spell{Deep Slumber$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Fireball (CL\arabic{cl_1})}, \spell{Arcane Sight}, \spell{Dispel Magic}
-\item [2nd] \spell{Hideous Laughter (DC26)$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Glitterdust}, \spell{Mirror Image}, \spell{Pilfering Hand (CL\arabic{cl_1})}, \spell{Suppress Charms and Compulsions}, \spell{Lipstitch}
+\item [3rd] \spell{Battering Blast (CL\arabic{cl_10})}, \spell{Deep Slumber$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Fireball (CL\arabic{cl_1})}, \spell{Arcane Sight}, \spell{Dispel Magic}
+\item [2nd] \spell{Hideous Laughter (DC27)$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Glitterdust}, \spell{Mirror Image}, \spell{Pilfering Hand (CL\arabic{cl_1})}, \spell{Suppress Charms and Compulsions}, \spell{Lipstitch}
 \item [1st] \spell{Magic Missile CL\arabic{cl_1}}, \spell{Liberating Command}, 
 	\spell{Cure Light Wounds (requires DC21 UMD)},
 	\spell{Mage Armor}, \spell{Entangle$^{\textrm{b}}$ CL\arabic{cl_1}}, \spell{Break}, \spell{Grease}, \spell{Shield}, \spell{Blood Money$^{\textrm{b}}$}
@@ -165,12 +167,11 @@ None
 \newcommand{\notes}{
 58/62 Prestige
 
-Battering Blast: 4 Balls at close range (60'). Each inflict 5d6 damage (10d6 when intensified). Bullrush attempt CMB = 30 + 10 for each ball beyond the first. Each ball makes its own attempt, but take highest. If the bullrush succeeds, DC23 reflex save or target is prone.\\
+Battering Blast: 5 Balls at close range (60'). Each inflict 5d6 damage (12d6 when intensified). Bullrush attempt CMB = \arabic{cl_10} + 10 for each ball beyond the first. Each ball makes its own attempt, but take highest. If the bullrush succeeds, DC24 reflex save or target is prone.\\
 }
 \newcommand{\people}{
 }
 
-\input{../pathfinder_society.tex}
 
 \newcommand{\scenariolist}{
 
