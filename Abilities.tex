@@ -56,7 +56,7 @@
 
 \newcommand{\charname}{Heneski (Formerly Nightmare)}
 \newcommand{\charrace}{Gnome}
-\newcommand{\charclass}{Tattooed Sorcerer 14}
+\newcommand{\charclass}{Tattooed Sorcerer 16}
 \newcommand{\charalignment}{NG}
 \newcommand{\charsex}{Male}
 \newcommand{\charsize}{Small}
@@ -68,32 +68,32 @@
 \newcommand{\chareyes}{Dark brown}
 \setcounter{age}{60}
 
-\setcounter{xp}{38}
-\setcounter{ecl}{11}
+\setcounter{xp}{47}
+\setcounter{ecl}{16}
 
-\setcounter{totalhp}{100}
-\setcounter{currenthp}{100}
+\setcounter{totalhp}{162}
+\setcounter{currenthp}{162}
 \newcommand{\speed}{20', 4sq (hopefully)}
 
 \setcounter{str}{10} % 2
-\setcounter{dex}{14} % 2 +2 enhancement
-\setcounter{con}{14} % 2
+\setcounter{dex}{16} % 2 +4 enhancement
+\setcounter{con}{18} % 2 +4 enhancement
 \setcounter{int}{14} % 5
 \setcounter{wis}{7}  % -4
-\setcounter{cha}{31} % 13 17 +2 racial +1 4th +1 boon +2 profane +1 8th +6 enhancement
+\setcounter{cha}{32} % 13 17 +2 racial +1 4th +1 boon +2 profane +1 8th +6 enhancement +1 12th +1 16th
 
 \setcounter{initmisc}{2}
 \setcounter{acnatural}{0}
 \setcounter{acarmour}{0}
 \setcounter{acmaxdex}{999} %maximum dexterity modifier armour allows. Use a high number for none
 
-\setcounter{basefort}{4}
-\setcounter{baseref}{4}
-\setcounter{basewill}{9}
+\setcounter{basefort}{5}
+\setcounter{baseref}{5}
+\setcounter{basewill}{10}
 \setcounter{resistancesave}{4}
-\setcounter{bab}{7}
+\setcounter{bab}{8}
 \setcounter{spellresistance}{0}
-\setcounter{casterlevel}{14}
+\setcounter{casterlevel}{16}
 
 
 \setcounter{cmdmisc}{\value{acdeflect}}
@@ -103,7 +103,7 @@
  Spell Focus (Enchantment), Intensify Spell,
  Spell Specialisation (Battering Blast),
  Improved Familiar, Evolved Familiar (Skilled(UMD)),
- Empower Spell, Quicken Spell$^{\textrm{b}}$, Seeking Spell
+ Empower Spell, Quicken Spell$^{\textrm{b}}$, Seeking Spell, Spell Perfection (Battering Blast)
 }
 
 \newcommand{\traits}{
@@ -116,8 +116,10 @@ Low-light vision;
 1/day arcane mark comprehend languages, message, read magic;
 1/day reroll natural 1 on 1d20, Tattoo Familiar (Riddywipple);
 3/day Dancing Lights, Woodland Stride;
-Create Spell Tattoo 2/day, 2/day Dimension Door (CL15)\small{[Enhanced Varisian Tattoo]};
-Fleeting Glance (Sp): Turn invisible for a number of rounds per day equal to your sorcerer level. This ability functions as greater invisibility. These rounds need not be consecutive.
+Create Spell Tattoo 3/day, 2/day Dimension Door (CL16)\small{[Enhanced Varisian Tattoo]};
+Fleeting Glance (Sp): Turn invisible for a number of rounds per day equal to your sorcerer level.
+This ability functions as greater invisibility. These rounds need not be consecutive.
+Fey Magic (su): Reroll SR checks at-will
 }
 
 
@@ -125,7 +127,7 @@ Fleeting Glance (Sp): Turn invisible for a number of rounds per day equal to you
 +2 Vs Enchantment, +2 vs Language-dependant, +2 vs fear and despair\\
 }
 \newcommand{\languages}{
-Common, Kelish, Gnome, Varision, Abyssal \\
+Common, Kelish, Gnome, Varision, Abyssal, Giant \\
 }
 \setcounter{lightload}{24}
 \setcounter{medload}{50}
@@ -140,21 +142,25 @@ Common, Kelish, Gnome, Varision, Abyssal \\
 
 \newcounter{cl_1}
 \setcounter{cl_1}{\value{casterlevel} +1}
-\newcounter{cl_7}
-\setcounter{cl_7}{\value{casterlevel} +7}
+\newcounter{cl_10}
+\setcounter{cl_10}{\value{casterlevel} +10}  % For Battering Blast - +1 Signature Spell, +1 Gifted Adept,
+                                           % +2 Varisan Tattoo, +4 spell specialization, +2 RPT
 
 
 \newcommand{\spellsknown}{
+
+%  8 7 6 5 4 3 2 1 0
+%  1 2 3 4 4 4 5 5 9
+ 
 \begin{compactenum}
-\item [7th] \spell{Limited Wish}
-\item [6th] \spell{Sonic Form}, \spell{Mislead$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Flesh to Stone}, \spell{Contingency}
-\item [5th] \spell{Feeblemind DC28}, \spell{Tree Stride$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Echolocation}, \spell{Dominate Person}
-\item [4th] \spell{Emergency Force Sphere}, \spell{Poison$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Dimensional Anchor}, \spell{Dimension Door}, \spell{Suppress Primal Magic}
-\item [3rd] \spell{Battering Blast (CL\arabic{cl_7})}, \spell{Deep Slumber$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Fireball (CL\arabic{cl_1})}, \spell{Arcane Sight}, \spell{Dispel Magic}
+\item [8th] \spell{Moment of Prescience}
+\item [7th] \spell{Phase Door$^{\textrm{b}}$}, \spell{Spell Turning}, \spell{Limited Wish}
+\item [6th] \spell{Mislead$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Undeath Ward}, \spell{Contingency}, \spell{Fluid Form}, \spell{Sonic Form}
+\item [5th] \spell{Tree Stride$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Feeblemind DC29}, \spell{Echolocation}, \spell{Dominate Person}, \spell{Overland Flight}
+\item [4th] \spell{Poison$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Emergency Force Sphere}, \spell{Dimensional Anchor}, \spell{Dimension Door}, \spell{Freedom of Movement}
+\item [3rd] \spell{Deep Slumber$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Battering Blast (CL\arabic{cl_10})}, \spell{Fireball (CL\arabic{cl_1})}, \spell{Arcane Sight}, \spell{Dispel Magic}
 \item [2nd] \spell{Hideous Laughter (DC26)$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Glitterdust}, \spell{Mirror Image}, \spell{Pilfering Hand (CL\arabic{cl_1})}, \spell{Suppress Charms and Compulsions}, \spell{Lipstitch}
-\item [1st] \spell{Magic Missile CL\arabic{cl_1}}, \spell{Liberating Command}, 
-	\spell{Cure Light Wounds (requires DC21 UMD)},
-	\spell{Mage Armor}, \spell{Entangle$^{\textrm{b}}$ CL\arabic{cl_1}}, \spell{Break}, \spell{Grease}, \spell{Shield}, \spell{Blood Money$^{\textrm{b}}$}
+\item [1st] \spell{Entangle$^{\textrm{b}}$ CL\arabic{cl_1}}, \spell{Magic Missile CL\arabic{cl_1}}, \spell{Liberating Command}, \spell{Cure Light Wounds (requires DC21 UMD)}, \spell{Mage Armor}, \spell{Break}, \spell{Grease}, \spell{Shield}
 \item [0]   \spell{Prestidigitation}, \spell{Detect Magic}, \spell{Mage Hand}, \spell{Message}, \spell{Acid Splash}, \spell{Dancing Lights}, \spell{Open/close}, \spell{Arcane Mark}, \spell{Spark}
 \end{compactenum}
 }
@@ -162,15 +168,66 @@ Common, Kelish, Gnome, Varision, Abyssal \\
 \newcommand{\domains}{
 None
 }
+
+\newcounter{bbmodifier}
+\setcounter{bbmodifier}{\value{cl_10} + 11}  % chamod + cl + 10
+
 \newcommand{\notes}{
 58/62 Prestige
 
-Battering Blast: 4 Balls at close range (60'). Each inflict 5d6 damage (10d6 when intensified). Bullrush attempt CMB = 30 + 10 for each ball beyond the first. Each ball makes its own attempt, but take highest. If the bullrush succeeds, DC23 reflex save or target is prone.\\
-}
-\newcommand{\people}{
+5th level slot: Quickened Empowered Intensified Seeking Battering Blast \\
+3rd level slot: Empowered Intensified Seeking battering Blast \\
+3rd level slot + lesser rod: Quickened Intensified Seeking battering blast (reach | merciful)
+
+
+Battering Blast: 5 Balls at close range (60'). Each inflict 5d6 damage (10d6 when intensified).
+Bullrush attempt CMB = \arabic{bbmodifier} + 10 for each ball beyond the first. Each ball makes its own attempt, but take highest.
+If the bullrush succeeds, DC24 reflex save or target is prone.\\
+
+Long duration spells:
+\begin{compactenum} % +1 7th, +1 6th, +1 5th
+\item [8th] \spell{Moment of Prescience (16 hours)}, \spell{Mind Blank (24 hours) *purchased (1200gp)}
+\item [7th] \spell{Limited Wish}, \spell{Phase Door$^{\textrm{b}}$}, \spell{Spell Turning (160 min)}
+\item [6th] \spell{Sonic Form (16 rounds)}, \spell{Undeath Ward (16 mins)}, \spell{Antimagic Field}, \spell{Fluid Form (16 mins)}
+\item [5th] \spell{Tree Stride$^{\textrm{b}}$}(CL\arabic{cl_1} (17 hours)), \spell{Echolocation (170 mins)}, \spell{Dominate Person (17 days)}, \spell{Overland Flight (17 hours)}, \spell{Fickle Winds (16 mins)}
+\item [4th] \spell{Freedom of Movement 70min (purchased (280gp))}
+\item [3rd] \spell{Arcane Sight (16 mins)}, \spell{Phantom Steed (16 hours)}, \spell{Resinous Skin (160 mins)}, \spell{Tongues (160 mins)}
+\item [2nd] \spell{Mirror Image (16 mins)*}, \spell{Suppress Charms and Compulsions (10 mins)}, \spell{Delay Pain (16 hours)}
+\item [1st] \spell{Mage Armor (16 hrs)}, \spell{Shield (16 mins)}
+
+\end{compactenum}
+
+Contingency: Death Ward in response to being hit by a Death effect, energy drain, or negative energy.
+
+\subsection{Pregame actions}
+\begin{compactenum}
+ \item [Previous week] Contingency (Death Ward in response to being hit with a Death effect), Limited Wish for Lesser Spellcasting Contract on Riddywipple,
+     offering Suppress Charms and Compulsions, Liberating Command and Shield. (1500gp)
+ \item [Previous day]  Moment of Prescience/ Magic Circle / Dimensional Anchor / Greater Planar Binding (Planetar)
+ \item [Pre-scenario] Purchase Mind Blank (1200gp), cast Moment of Prescience [8th], Overland Flight [5th], Phantom Steed [3rd], Delay Pain [2nd], Mage Armour [1st]
+ \item [Post-briefing] Purchase Freedom of Movement (280gp), cast Resinous Skin, [3rd] Tongues [3rd], Echolocation [5th], Resist Energy (Fire, Cold) [2nd][2nd]
+ \item [Pre-combat] Cast Extended (lesser): Mirror Image, Arcane Sight [2nd][3rd], Reduce Person [1st] ; Extended Fluid Form, Undeath Ward [6th][6th]
+\end{compactenum}
+
+Slots expended daily: 1x8th, 2x5th, 3rd, 2nd, 1st \\
+Slots expended by post-briefing: 1x8th, 3x5th, 3x3rd, 3x2nd, 1st\\
+Slots expended pre-combat: 1x8th, 2x6th, 3x5th, 4x3rd, 3x2nd, 2x1st\\
+
+Modifiers: \\
++2 profane to AC, Checks, Saves (Spellcasting contract)\\
++4 armour bonus to AC (Mage Armour) \\
+Resist 30 Fire, Cold \\
+DR 10/slashing; reach +10' (Fluid Form) \\
+DR5/Piercing (Resinous skin) \\
++2 size bonus to dex, -2 str, +1 attacks, +1 AC (reduce person) \\
+
+
+Any weapon, that strikes you becomes stuck unless its wielder succeeds at a DC24 Reflex saving throw. Such a weapon can be pulled free of you 
+only with a successful DC24 Strength check
 }
 
-\input{../pathfinder_society.tex}
+\newcommand{\people}{
+}
 
 \newcommand{\scenariolist}{
 
