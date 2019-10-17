@@ -86,15 +86,19 @@
 \setcounter{acnatural}{0}
 \setcounter{acarmour}{0}
 \setcounter{acmaxdex}{999} %maximum dexterity modifier armour allows. Use a high number for none
+\setcounter{acdeflect}{1}  % Vambraces of Defense
 
 \setcounter{basefort}{5}
 \setcounter{baseref}{5}
 \setcounter{basewill}{10}
-\setcounter{resistancesave}{4}
+\setcounter{resistancesave}{5}
 \setcounter{bab}{8}
 \setcounter{spellresistance}{0}
 \setcounter{casterlevel}{16}
 
+\setcounter{magicfort}{1}  % Luck bonus (lucky horseshoe)
+\setcounter{magicref}{1}
+\setcounter{magicwill}{1}
 
 \setcounter{cmdmisc}{\value{acdeflect}}
 
@@ -124,7 +128,7 @@ Fey Magic (su): Reroll SR checks at-will
 
 
 \newcommand{\conditionalmods}{
-+2 Vs Enchantment, +2 vs Language-dependant, +2 vs fear and despair\\
++2 Vs Enchantment, +2 vs Language-dependant, +2 vs fear and despair, +1 vs Necromancy\\
 }
 \newcommand{\languages}{
 Common, Kelish, Gnome, Varision, Abyssal, Giant \\
@@ -157,8 +161,8 @@ Common, Kelish, Gnome, Varision, Abyssal, Giant \\
 \item [7th] \spell{Phase Door$^{\textrm{b}}$}, \spell{Spell Turning}, \spell{Limited Wish}
 \item [6th] \spell{Mislead$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Undeath Ward}, \spell{Contingency}, \spell{Fluid Form}, \spell{Sonic Form}
 \item [5th] \spell{Tree Stride$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Feeblemind DC29}, \spell{Echolocation}, \spell{Dominate Person}, \spell{Overland Flight}
-\item [4th] \spell{Poison$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Emergency Force Sphere}, \spell{Dimensional Anchor}, \spell{Dimension Door}, \spell{Freedom of Movement}
-\item [3rd] \spell{Deep Slumber$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Battering Blast (CL\arabic{cl_10})}, \spell{Fireball (CL\arabic{cl_1})}, \spell{Arcane Sight}, \spell{Dispel Magic}
+\item [4th] \spell{Named Bullet}, \spell{Emergency Force Sphere}, \spell{Dimensional Anchor}, \spell{Dimension Door}, \spell{Freedom of Movement}
+\item [3rd] \spell{Magic circle vs Good/Evil/Chaos/Law}, \spell{Battering Blast (CL\arabic{cl_10})}, \spell{Fireball (CL\arabic{cl_1})}, \spell{Arcane Sight}, \spell{Dispel Magic}
 \item [2nd] \spell{Hideous Laughter (DC26)$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Glitterdust}, \spell{Mirror Image}, \spell{Pilfering Hand (CL\arabic{cl_1})}, \spell{Suppress Charms and Compulsions}, \spell{Lipstitch}
 \item [1st] \spell{Entangle$^{\textrm{b}}$ CL\arabic{cl_1}}, \spell{Magic Missile CL\arabic{cl_1}}, \spell{Liberating Command}, \spell{Cure Light Wounds (requires DC21 UMD)}, \spell{Mage Armor}, \spell{Break}, \spell{Grease}, \spell{Shield}
 \item [0]   \spell{Prestidigitation}, \spell{Detect Magic}, \spell{Mage Hand}, \spell{Message}, \spell{Acid Splash}, \spell{Dancing Lights}, \spell{Open/close}, \spell{Arcane Mark}, \spell{Spark}
@@ -186,7 +190,7 @@ If the bullrush succeeds, DC24 reflex save or target is prone.\\
 
 Long duration spells:
 \begin{compactenum} % +1 7th, +1 6th, +1 5th
-\item [8th] \spell{Moment of Prescience (16 hours)}, \spell{Mind Blank (24 hours) *purchased (1200gp)}
+\item [8th] \spell{Moment of Prescience (16 hours)}, \spell{Mind Blank (24 hours) *previous day}
 \item [7th] \spell{Limited Wish}, \spell{Phase Door$^{\textrm{b}}$}, \spell{Spell Turning (160 min)}
 \item [6th] \spell{Sonic Form (16 rounds)}, \spell{Undeath Ward (16 mins)}, \spell{Antimagic Field}, \spell{Fluid Form (16 mins)}
 \item [5th] \spell{Tree Stride$^{\textrm{b}}$}(CL\arabic{cl_1} (17 hours)), \spell{Echolocation (170 mins)}, \spell{Dominate Person (17 days)}, \spell{Overland Flight (17 hours)}, \spell{Fickle Winds (16 mins)}
@@ -201,17 +205,18 @@ Contingency: Death Ward in response to being hit by a Death effect, energy drain
 
 \subsection{Pregame actions}
 \begin{compactenum}
- \item [Previous week] Contingency (Death Ward in response to being hit with a Death effect), Limited Wish for Lesser Spellcasting Contract on Riddywipple,
-     offering Suppress Charms and Compulsions, Liberating Command and Shield. (1500gp)
- \item [Previous day]  Moment of Prescience/ Magic Circle / Dimensional Anchor / Greater Planar Binding (Planetar)
- \item [Pre-scenario] Purchase Mind Blank (1200gp), cast Moment of Prescience [8th], Overland Flight [5th], Phantom Steed [3rd], Delay Pain [2nd], Mage Armour [1st]
+ \item [Previous week] Contingency (Death Ward in response to being hit with a Death effect), Spellcasting Contract on Riddywipple,
+     offering Suppress Charms and Compulsions, Liberating Command and Haste. (1500gp)
+ \item [Previous two days]  Moment of Prescience/ Magic Circle / Dimensional Anchor / Greater Planar Binding (Planetar) 
+ \item [Previous day] Mind Blank
+ \item [Pre-scenario] cast Moment of Prescience [8th], Overland Flight [5th], Phantom Steed [3rd], Delay Pain [2nd], Mage Armour [1st]
  \item [Post-briefing] Purchase Freedom of Movement (280gp), cast Resinous Skin, [3rd] Tongues [3rd], Echolocation [5th], Resist Energy (Fire, Cold) [2nd][2nd]
  \item [Pre-combat] Cast Extended (lesser): Mirror Image, Arcane Sight [2nd][3rd], Reduce Person [1st] ; Extended Fluid Form, Undeath Ward [6th][6th]
 \end{compactenum}
 
-Slots expended daily: 1x8th, 2x5th, 3rd, 2nd, 1st \\
-Slots expended by post-briefing: 1x8th, 3x5th, 3x3rd, 3x2nd, 1st\\
-Slots expended pre-combat: 1x8th, 2x6th, 3x5th, 4x3rd, 3x2nd, 2x1st\\
+Slots expended daily: 1x8th, 1x7th, 2x5th, 3rd, 2nd, 1st \\
+Slots expended by post-briefing: 1x8th, 1x7th, 3x5th, 3x3rd, 3x2nd, 1st\\
+Slots expended pre-combat: 1x8th, 1x7th, 2x6th, 3x5th, 4x3rd, 3x2nd, 2x1st\\
 
 Modifiers: \\
 +2 profane to AC, Checks, Saves (Spellcasting contract)\\
@@ -223,7 +228,13 @@ DR5/Piercing (Resinous skin) \\
 
 
 Any weapon, that strikes you becomes stuck unless its wielder succeeds at a DC24 Reflex saving throw. Such a weapon can be pulled free of you 
-only with a successful DC24 Strength check
+only with a successful DC24 Strength check\\
+
++1 on charisma checks vs gnomes, +2 sense motive vs Pathfinders \\
+Amulet of Glory One-time +10 initiative checks\\
+Orb of a Distant World (Restoration, two uses) \\
+Pathfinder's Excellence (Two uses: advantage on attack roll)\\
+Pathfinder's Excellence (Two uses: swift action for 1d8+2*level temp HP)\\
 }
 
 \newcommand{\people}{
