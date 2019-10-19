@@ -82,9 +82,10 @@
 \setcounter{wis}{7}  % -4
 \setcounter{cha}{32} % 13 17 +2 racial +1 4th +1 boon +2 profane +1 8th +6 enhancement +1 12th +1 16th
 
-\setcounter{initmisc}{2}
+\setcounter{initmisc}{5}
 \setcounter{acnatural}{0}
 \setcounter{acarmour}{0}
+\setcounter{acmisc}{3} 
 \setcounter{acmaxdex}{999} %maximum dexterity modifier armour allows. Use a high number for none
 \setcounter{acdeflect}{1}  % Vambraces of Defense
 
@@ -99,8 +100,11 @@
 \setcounter{magicfort}{1}  % Luck bonus (lucky horseshoe)
 \setcounter{magicref}{1}
 \setcounter{magicwill}{1}
+\setcounter{fortmisc}{3}    % Save bonus (spellcasting contract)
+\setcounter{refmisc}{3}
+\setcounter{willmisc}{3}
 
-\setcounter{cmdmisc}{\value{acdeflect}}
+\setcounter{cmdmisc}{{\value{acdeflect} + 3}}
 
 \newcommand{\feats}{
  Varisian Tattoo (Evocation)$^{\textrm{b}}$,
@@ -159,10 +163,10 @@ Common, Kelish, Gnome, Varision, Abyssal, Giant \\
 \begin{compactenum}
 \item [8th] \spell{Moment of Prescience}
 \item [7th] \spell{Phase Door$^{\textrm{b}}$}, \spell{Spell Turning}, \spell{Limited Wish}
-\item [6th] \spell{Mislead$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Undeath Ward}, \spell{Contingency}, \spell{Fluid Form}, \spell{Sonic Form}
+\item [6th] \spell{Mislead$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Undeath Ward}, \spell{Wall of Silver}, \spell{Fluid Form}, \spell{Sonic Form}
 \item [5th] \spell{Tree Stride$^{\textrm{b}}$}(CL\arabic{cl_1}), \spell{Feeblemind DC29}, \spell{Echolocation}, \spell{Dominate Person}, \spell{Overland Flight}
 \item [4th] \spell{Named Bullet}, \spell{Emergency Force Sphere}, \spell{Dimensional Anchor}, \spell{Dimension Door}, \spell{Freedom of Movement}
-\item [3rd] \spell{Magic circle vs Good/Evil/Chaos/Law}, \spell{Battering Blast (CL\arabic{cl_10})}, \spell{Fireball (CL\arabic{cl_1})}, \spell{Arcane Sight}, \spell{Dispel Magic}
+\item [3rd] \spell{Magic circle vs Good/Evil/Chaos/Law}, \spell{Battering Blast (CL\arabic{cl_10})}, \spell{Fireball (CL\arabic{cl_1})}, \spell{Arcane Sight}, \spell{Dispel Magic}, \spell{Phantom Steed*}
 \item [2nd] \spell{Hideous Laughter (DC26)$^{\textrm{b}}$ (CL\arabic{cl_1})}, \spell{Glitterdust}, \spell{Mirror Image}, \spell{Pilfering Hand (CL\arabic{cl_1})}, \spell{Suppress Charms and Compulsions}, \spell{Lipstitch}
 \item [1st] \spell{Entangle$^{\textrm{b}}$ CL\arabic{cl_1}}, \spell{Magic Missile CL\arabic{cl_1}}, \spell{Liberating Command}, \spell{Cure Light Wounds (requires DC21 UMD)}, \spell{Mage Armor}, \spell{Break}, \spell{Grease}, \spell{Shield}
 \item [0]   \spell{Prestidigitation}, \spell{Detect Magic}, \spell{Mage Hand}, \spell{Message}, \spell{Acid Splash}, \spell{Dancing Lights}, \spell{Open/close}, \spell{Arcane Mark}, \spell{Spark}
@@ -184,7 +188,7 @@ None
 3rd level slot + lesser rod: Quickened Intensified Seeking battering blast (reach | merciful)
 
 
-Battering Blast: 5 Balls at close range (60'). Each inflict 5d6 damage (10d6 when intensified).
+Battering Blast: 5 Balls at close range (60'). Each inflict 5d6 damage (15d6 when intensified).
 Bullrush attempt CMB = \arabic{bbmodifier} + 10 for each ball beyond the first. Each ball makes its own attempt, but take highest.
 If the bullrush succeeds, DC24 reflex save or target is prone.\\
 
@@ -195,7 +199,7 @@ Long duration spells:
 \item [6th] \spell{Sonic Form (16 rounds)}, \spell{Undeath Ward (16 mins)}, \spell{Antimagic Field}, \spell{Fluid Form (16 mins)}
 \item [5th] \spell{Tree Stride$^{\textrm{b}}$}(CL\arabic{cl_1} (17 hours)), \spell{Echolocation (170 mins)}, \spell{Dominate Person (17 days)}, \spell{Overland Flight (17 hours)}, \spell{Fickle Winds (16 mins)}
 \item [4th] \spell{Freedom of Movement 70min (purchased (280gp))}
-\item [3rd] \spell{Arcane Sight (16 mins)}, \spell{Phantom Steed (16 hours)}, \spell{Resinous Skin (160 mins)}, \spell{Tongues (160 mins)}
+\item [3rd] \spell{Arcane Sight (16 mins)}, \spell{Phantom Steed (16 hours)}, \spell{Resinous Skin (160 mins)}, \spell{Tongues (160 mins)}, \spell{Magic Circle vs Evil (160min)}
 \item [2nd] \spell{Mirror Image (16 mins)*}, \spell{Suppress Charms and Compulsions (10 mins)}, \spell{Delay Pain (16 hours)}
 \item [1st] \spell{Mage Armor (16 hrs)}, \spell{Shield (16 mins)}
 
@@ -206,20 +210,20 @@ Contingency: Death Ward in response to being hit by a Death effect, energy drain
 \subsection{Pregame actions}
 \begin{compactenum}
  \item [Previous week] Contingency (Death Ward in response to being hit with a Death effect), Spellcasting Contract on Riddywipple,
-     offering Suppress Charms and Compulsions, Liberating Command and Haste. (1500gp)
+     offering Suppress Charms and Compulsions, Liberating Command and Haste.
  \item [Previous two days]  Moment of Prescience/ Magic Circle / Dimensional Anchor / Greater Planar Binding (Planetar) 
- \item [Previous day] Mind Blank
- \item [Pre-scenario] cast Moment of Prescience [8th], Overland Flight [5th], Phantom Steed [3rd], Delay Pain [2nd], Mage Armour [1st]
- \item [Post-briefing] Purchase Freedom of Movement (280gp), cast Resinous Skin, [3rd] Tongues [3rd], Echolocation [5th], Resist Energy (Fire, Cold) [2nd][2nd]
+ \item [Previous day] Mind Blank, Moment of Prescience (lasts 8 hours into thw scenario)
+ \item [Pre-scenario] cast Overland Flight [5th], Phantom Steed [3rd], Delay Pain [2nd], Mage Armour [1st]
+ \item [Post-briefing] Purchase Freedom of Movement (280gp), cast Resinous Skin[3rd] Echolocation [5th], Resist Energy (Fire, Cold) [2nd][2nd]
  \item [Pre-combat] Cast Extended (lesser): Mirror Image, Arcane Sight [2nd][3rd], Reduce Person [1st] ; Extended Fluid Form, Undeath Ward [6th][6th]
 \end{compactenum}
 
-Slots expended daily: 1x8th, 1x7th, 2x5th, 3rd, 2nd, 1st \\
-Slots expended by post-briefing: 1x8th, 1x7th, 3x5th, 3x3rd, 3x2nd, 1st\\
-Slots expended pre-combat: 1x8th, 1x7th, 2x6th, 3x5th, 4x3rd, 3x2nd, 2x1st\\
+Slots expended daily: 1x7th, 2x5th, 3rd, 2nd, 1st \\
+Slots expended by post-briefing: 1x7th, 3x5th, 3x3rd, 3x2nd, 1st\\
+Slots expended pre-combat: 1x7th, 2x6th, 3x5th, 4x3rd, 3x2nd, 2x1st\\
 
 Modifiers: \\
-+2 profane to AC, Checks, Saves (Spellcasting contract)\\
++3 profane to AC, Checks, Saves (Spellcasting contract)\\
 +4 armour bonus to AC (Mage Armour) \\
 Resist 30 Fire, Cold \\
 DR 10/slashing; reach +10' (Fluid Form) \\
@@ -235,6 +239,29 @@ Amulet of Glory One-time +10 initiative checks\\
 Orb of a Distant World (Restoration, two uses) \\
 Pathfinder's Excellence (Two uses: advantage on attack roll)\\
 Pathfinder's Excellence (Two uses: swift action for 1d8+2*level temp HP)\\
+
+BOTTLED SCREAM [moderate evocation] CL:7 none 900gp, 0.5lb \\
+Wax and resin seal this smoked glass bottle. When the bottle is opened or shattered, a shrill scream erupts in a 20-foot-radius burst. Any bardic performances with audible components immediately end. Any spellcaster concentrating on or casting a spell must succeed at a concentration check (DC 15 + spell level) or lose the spell. In addition, the
+scream dispels any silence spells that overlap its area. The bottle can be thrown as a splash weapon or opened by hand. If the bottle is opened, its burst is centered on the opener's space. Source: Advanced Class Guide\\
+
+VAMBRACES OF DEFENSE [faint abjuration] CL:5 wrists 6000gp, 3lb \\
+These polished steel vambraces grant a +1 deflection bonus to AC. Once per day, as an immediate action, if the wearer has at least one hand free, when he would normally be hit with an attack from a ranged weapon, he may deflect it with the bracers, taking no damage from it, as if he had the Deflect Arrows feat.\\
+
+LUCKY HORSESHOE [moderate evocation] CL:9 none 6800gp, 2lb\\
+Although it appears to be a simple horseshoe, a lucky horseshoe focuses and channels the mystical energies of good fortune. As long as a lucky horseshoe's owner carries it on her person, she gains a +1 luck bonus on saving throws. Once per day, she can invoke the lucky horseshoe's power to gain a +4 luck bonus on a single saving throw. She must
+declare that she is using this ability before the roll is made. Source: Occult Adventures\\
+
+GOZ MASK [moderate transmutation] CL:8 head 8000gp, 1lb\\
+A goz mask allows you to see through fog, smoke, and other obscuring vapors as if they did not exist (this ability functions underwater as well, allowing the wearer to see through thick silt and other aquatic precipitates). Additionally, you are treated as one size category larger than you are and gain a +4 bonus on all saving throws made to resist the effects of wind while wearing a goz mask.
+A goz mask allows its wearer to breathe water for 1 hour per day-these minutes need not be consecutive, but must be expended in minimum increments of 10 minutes each.\\
+
+SCARAB OF PROTECTION [strong abjuration and necromancy] CL:18 neck 38000gp, 0lb\\
+This device appears to be a jade medallion in the shape of a beetle. If it is held for 1 round, an inscription appears on its surface letting the holder know that it is a protective device.   The scarab's possessor gains spell resistance 20. The scarab can also absorb energy-draining attacks, death effects, and negative energy effects. Upon
+absorbing 12 such attacks, the scarab turns to powder and is destroyed. Source: Ultimate Equipment\\
+
+RUNEWARD TATTOO \\
+The bearer gains a +1 insight bonus on saving throws against spells and spell-like abilities of the keyed school and knows when such a spell or spell-like ability has been cast within 60 feet \\
+
 }
 
 \newcommand{\people}{

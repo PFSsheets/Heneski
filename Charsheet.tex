@@ -11,6 +11,7 @@
 \usepackage{ulem}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{ifthen}
+\usepackage{longtable}
 \usepackage[usenames,dvipsnames]{color}
 \setlength{\columnsep}{5mm}
 \pagestyle{empty}
@@ -226,11 +227,11 @@
 \large \textbf{Notes} \\
 \notes
 \large \textbf{GEAR}\\
-\begin{tabular}{l c c c}
+\begin{longtable}{l c c c}
  Name & Location & Value & Weight \\
  \input{Items}
  %Total & & \arabic{totalworth} & \arabic{totalweight} \\
-\end{tabular}\\
+\end{longtable}
 \large \textbf{People} \\
 \people
 \endgroup
